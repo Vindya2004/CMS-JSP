@@ -14,9 +14,16 @@ public class UserDTO {
     private String email;
     private String jobRole;
 
-    public UserDTO(String name, String password, String job) {
+    public UserDTO(String name, String password, String jobRole) {
         this.username = name;
         this.password = password;
-        this.jobRole = job;
+        this.jobRole = jobRole;
+    }
+
+    public UserDTO(String name, String email, String password, String jobRole) {
+        this.username = name;
+        this.email = email;
+        this.password = password;
+        this.jobRole = jobRole;
     }
 }

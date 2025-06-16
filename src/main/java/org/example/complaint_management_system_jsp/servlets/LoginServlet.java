@@ -19,6 +19,6 @@ public class LoginServlet extends HttpServlet {
 
         ServletContext servletContext = getServletContext();
         UserDTO userDTO = UserModel.findUser(servletContext,new UserDTO(name,password,job));
-        System.out.println(name+" "+password+" "+job);
+
     }
 }

@@ -14,7 +14,7 @@ public class UserModel {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {
             Connection connection = ds.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ? and password = ? and role = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ? and password = ? and job = ?");
             preparedStatement.setString(1,userDTO.getUsername());
             preparedStatement.setString(2,userDTO.getPassword());
             preparedStatement.setString(3,userDTO.getJobRole());
@@ -29,5 +29,27 @@ public class UserModel {
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    public static boolean saveUser(UserDTO employee, ServletContext servletContext) {
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
+
+        try {
+            Connection connection = ds.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("Insert into users(username, password, email, job) values (?,?,?,?)");
+            preparedStatement.setString(1,employee.getUsername());
+            preparedStatement.setString(2,employee.getPassword());
+            preparedStatement.setString(3,employee.getEmail());
+            preparedStatement.setString(4,employee.getJobRole());
+            int i = preparedStatement.executeUpdate();
+
+            if (i > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
     }
 }
