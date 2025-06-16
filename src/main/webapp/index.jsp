@@ -93,7 +93,15 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Enter Your Password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-submit">Sign In</button>
+            <div class="col-md-4">
+                <label for="job" class="form-label">Job-Role</label>
+                <select id="job" class="form-select" name="user">
+                    <option selected>Choose...</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-submit mt-3">Sign In</button>
 
             <a href="signup.jsp" type="button" class="btn btn-info mt-3">Sign Up</a>
         </form>
