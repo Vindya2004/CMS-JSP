@@ -1,6 +1,7 @@
 <%@ page import="org.example.complaint_management_system_jsp.dto.ComplaintDTO" %>
 <%@ page import="org.example.complaint_management_system_jsp.model.ComplaintModel" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 6/16/2025
@@ -92,7 +93,13 @@
         </thead>
         <tbody>
         <%
-            List<ComplaintDTO> complaintDTOS = new ComplaintModel().getById(request.getServletContext(),request.getParameter("id"));
+            String empId = request.getParameter("id");
+            List<ComplaintDTO> complaintDTOS = new ArrayList<>();
+
+            if (empId != null && !empId.isEmpty()) {
+                complaintDTOS = new ComplaintModel().getById(request.getServletContext(), empId);
+            }
+
             for (ComplaintDTO complaintDTO : complaintDTOS){
         %>
         <tr>
@@ -112,6 +119,5 @@
     </table>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-
 </body>
 </html>

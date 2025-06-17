@@ -33,6 +33,44 @@ public class ComplaintModel {
         return false;
     }
 
+    public static boolean updateComplaint(ServletContext servletContext, ComplaintDTO complaintDTO) {
+        System.out.println(complaintDTO.toString());
+
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
+        try {
+            Connection connection = ds.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE complaints SET description=? , date=? WHERE complaint_id = ? AND status = 'New'");
+            preparedStatement.setString(1,complaintDTO.getDescription());
+            preparedStatement.setString(2, complaintDTO.getDate());
+            preparedStatement.setInt(3,complaintDTO.getId());
+            int i = preparedStatement.executeUpdate();
+
+            if (i>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
+    public static ComplaintDTO findById(ServletContext servletContext, String id) {
+        System.out.println(id);
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
+        try {
+            Connection connection = ds.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM complaints WHERE complaint_id = ?");
+            preparedStatement.setInt(1, Integer.parseInt(id));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return new ComplaintDTO(resultSet.getInt("complaint_id"),resultSet.getInt("employee_id"), resultSet.getString("description"), resultSet.getString("date"),resultSet.getString("status"),resultSet.getString("comment"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
     public List<ComplaintDTO> getById(ServletContext servletContext, String id) {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {

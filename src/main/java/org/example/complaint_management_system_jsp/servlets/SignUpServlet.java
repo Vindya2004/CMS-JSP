@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet("/signup")
 public class SignUpServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
@@ -22,7 +22,7 @@ public class SignUpServlet extends HttpServlet {
         ServletContext servletContext = req.getServletContext();
 
         if (UserModel.saveUser(new UserDTO(name, email, password, "employee"), servletContext)){
-            resp.sendRedirect(req.getContextPath() + "/employee.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Employee.jsp");
         }
 
     }

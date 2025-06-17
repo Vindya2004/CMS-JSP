@@ -90,7 +90,7 @@
 <div class="card-container">
     <div class="form-section">
         <h3 class="mb-4 text-center">Sign Up</h3>
-        <form method="get" action="/signup">
+        <form method="post" action="/signup">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name" required>
