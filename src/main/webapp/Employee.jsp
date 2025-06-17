@@ -13,6 +13,9 @@
 <head>
     <title>Employee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <style>
         body {
@@ -62,6 +65,30 @@
             font-weight: 600;
             color: #0d6efd;
         }
+        .para {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-left: 8px solid #c97a40;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .para p {
+            font-size: 17px;
+            color: #4e342e;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .para p i {
+            font-size: 22px;
+            margin-right: 12px;
+            color: #ff6f00;
+        }
     </style>
 </head>
 <body>
@@ -76,7 +103,14 @@
 
 <div class="container">
     <div class="title-bar">
-        <h2>Complaint List</h2>
+        <h2>User DashBoard</h2>
+        <h4>View all Complaint</h4>
+    </div>
+
+    <div class="para">
+        <p>Welcome to your complaint dashboard</p>
+        <h4><i class="fas fa-pen"></i> You can submit and edit your complaints</h4>
+        <p> Review all your complaint records</p>
     </div>
 
     <table class="table table-bordered table-hover shadow-sm rounded">

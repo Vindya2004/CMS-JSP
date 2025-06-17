@@ -26,4 +26,11 @@ public class ComplaintDTO {
         this.date=date;
     }
 
+    public ComplaintDTO(String id, String description, String date, String comment, String status) {
+        this.id=Integer.parseInt(id);
+        this.description=description;
+        this.date=date;
+        this.comment=comment;
+        this.status=status;
+    }
 }

@@ -88,6 +88,27 @@ public class ComplaintModel {
         return false;
     }
 
+    public static boolean adminComplaint(ServletContext servletContext, ComplaintDTO complaintDTO) {
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
+        try {
+            Connection connection = ds.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE complaints SET description=? , date=?, comment = ?, status=? WHERE complaint_id = ?");
+            preparedStatement.setString(1,complaintDTO.getDescription());
+            preparedStatement.setString(2, complaintDTO.getDate());
+            preparedStatement.setString(3,complaintDTO.getComment());
+            preparedStatement.setString(4,complaintDTO.getStatus());
+            preparedStatement.setInt(5,complaintDTO.getId());
+            int i = preparedStatement.executeUpdate();
+
+            if (i>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
     public List<ComplaintDTO> getById(ServletContext servletContext, String id) {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {
@@ -111,4 +132,21 @@ public class ComplaintModel {
             throw new RuntimeException(e);
         }
     }
+
+    public List<ComplaintDTO> getAllComplaints(ServletContext servletContext) {
+        BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
+        try {
+            Connection connection = ds.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM complaints");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            List<ComplaintDTO> complaintDTOS = new ArrayList<>();
+            while (resultSet.next()){
+                complaintDTOS.add(new ComplaintDTO(resultSet.getInt(1),resultSet.getInt(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6)));
+            }
+            return complaintDTOS;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
