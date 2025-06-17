@@ -22,7 +22,7 @@ public class SignUpServlet extends HttpServlet {
         ServletContext servletContext = req.getServletContext();
 
         if (UserModel.saveUser(new UserDTO(name, email, password, "employee"), servletContext)){
-            resp.sendRedirect(req.getContextPath() + "/Employee.jsp");
+            resp.sendRedirect(req.getContextPath() + "/employee.jsp");
         }
 
     }

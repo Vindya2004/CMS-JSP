@@ -18,7 +18,15 @@ public class LoginServlet extends HttpServlet {
         String job = req.getParameter("user");
 
         ServletContext servletContext = getServletContext();
-        UserDTO userDTO = UserModel.findUser(servletContext,new UserDTO(name,password,job));
+        UserDTO user = UserModel.findUser(servletContext,new UserDTO(name,password,job));
+
+        if (user == null) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        } else if (user.getJobRole().equals("admin")) {
+            resp.sendRedirect(req.getContextPath()+"/Admin.jsp"+"?id="+user.getId());
+        } else if (user.getJobRole().equals("employee")) {
+            resp.sendRedirect(req.getContextPath()+"/Employee.jsp"+"?id="+user.getId());
+        }
 
     }
 }

@@ -94,8 +94,8 @@
                 <input type="password" class="form-control" id="password" placeholder="Enter Your Password" name="password" required>
             </div>
             <div class="col-md-4">
-                <label for="job" class="form-label">Job-Role</label>
-                <select id="job" class="form-select" name="user">
+                <label for="inputState" class="form-label">Job-Role</label>
+                <select id="inputState" class="form-select" name="user">
                     <option selected>Choose...</option>
                     <option value="admin">Admin</option>
                     <option value="employee">Employee</option>
