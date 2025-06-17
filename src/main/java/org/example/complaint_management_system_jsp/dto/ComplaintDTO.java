@@ -25,4 +25,5 @@ public class ComplaintDTO {
         this.description=description;
         this.date=date;
     }
+
 }
