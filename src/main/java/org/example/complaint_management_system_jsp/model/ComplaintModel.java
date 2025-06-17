@@ -21,6 +21,7 @@ public class ComplaintModel {
             preparedStatement.setInt(1, complaintDTO.getEmployee_id());
             preparedStatement.setString(2, complaintDTO.getDescription());
             preparedStatement.setString(3, complaintDTO.getDate());
+
             int i = preparedStatement.executeUpdate();
 
             if (i>0){

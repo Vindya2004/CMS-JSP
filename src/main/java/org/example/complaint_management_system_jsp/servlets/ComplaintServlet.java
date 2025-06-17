@@ -18,6 +18,7 @@ public class ComplaintServlet extends HttpServlet {
             String id = req.getParameter("id");
             String description = req.getParameter("description");
             String date = req.getParameter("date");
+
             System.out.println(id + " " + description + " " + date);
 
             ServletContext servletContext = req.getServletContext();
