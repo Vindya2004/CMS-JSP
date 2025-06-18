@@ -13,8 +13,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to right, #e0f2fe, #bae6fd, #a5d8ff, #c7d2fe, #e0e7ff);
             font-family: 'Segoe UI', sans-serif;
+        }
+        .custom-navbar {
+            background: linear-gradient(to right, #7c3aed, #6d28d9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            color: white;
         }
 
         .container {
@@ -49,6 +54,9 @@
 </head>
 <body>
 <% ComplaintDTO complaintDTO = ComplaintModel.findById(request.getServletContext(), request.getParameter("id"));%>
+<nav class="navbar custom-navbar d-flex justify-content-center align-items-center px-4 py-4">
+    <span class="fs-3 fw-bold text-white">Delete Your Complaint</span>
+</nav>
 <div class="container">
     <h2>Confirm Delete Complaint</h2>
     <form class="row g-3" action="/delete-complaint?id=<%= complaintDTO.getId() %>&eid=<%= complaintDTO.getEmployee_id() %>" method="post">

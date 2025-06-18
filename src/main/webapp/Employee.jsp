@@ -183,13 +183,13 @@
     <table class="table table-bordered table-hover shadow-sm rounded">
         <thead>
         <tr>
-            <th>Complaint ID</th>
-            <th>Employee ID</th>
-            <th>Complaint Title</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Comment</th>
-            <th>Action</th>
+            <th><i class="fas fa-hashtag text-dark me-2"></i>Complaint ID</th>
+            <th><i class="fas fa-user-tie text-dark me-2"></i>Employee ID</th>
+            <th><i class="fas fa-file-alt text-info me-2"></i>Complaint Title</th>
+            <th><i class="fas fa-calendar-alt text-warning me-2"></i>Date</th>
+            <th><i class="fas fa-info-circle text-secondary me-2"></i>Status</th>
+            <th><i class="fas fa-comment-dots text-success me-2"></i>Comment</th>
+            <th><i class="fas fa-tools text-danger me-2"></i>Action</th>
         </tr>
         </thead>
         <tbody>

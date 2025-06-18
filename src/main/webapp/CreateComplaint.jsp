@@ -13,30 +13,54 @@
 
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to right, #e0f2fe, #bae6fd, #a5d8ff, #c7d2fe, #e0e7ff);
             font-family: 'Segoe UI', sans-serif;
         }
 
-        .form-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .custom-navbar {
+            background: linear-gradient(to right, #7c3aed, #6d28d9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            color: white;
+        }
+
+        .container {
+            max-width: 700px;
             margin-top: 50px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
         }
 
         h2 {
             text-align: center;
             margin-bottom: 30px;
-            color: #0d6efd;
+            color: #6d28d9;
+            font-weight: 700;
         }
 
         .btn-primary {
             width: 100%;
+            font-weight: 600;
+            padding: 10px;
+            background-color: #6d28d9;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #5b21b6;
         }
     </style>
 </head>
 <body>
+<nav class="navbar custom-navbar d-flex justify-content-center align-items-center px-4 py-4">
+    <span class="fs-3 fw-bold text-white">Create Your New Complaint</span>
+</nav>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 form-container">

@@ -40,7 +40,7 @@ public class ComplaintModel {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {
             Connection connection = ds.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE complaints SET description=? , date=? WHERE complaint_id = ? AND status = 'New'");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE complaints SET description=? , date=? WHERE complaint_id = ? AND status = 'Pending'");
             preparedStatement.setString(1,complaintDTO.getDescription());
             preparedStatement.setString(2, complaintDTO.getDate());
             preparedStatement.setInt(3,complaintDTO.getId());
@@ -76,7 +76,7 @@ public class ComplaintModel {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {
             Connection connection = ds.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM complaints WHERE complaint_id = ? AND status = 'New'");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM complaints WHERE complaint_id = ? AND status = 'Pending'");
             preparedStatement.setInt(1, id);
             int i = preparedStatement.executeUpdate();
 
@@ -109,6 +109,7 @@ public class ComplaintModel {
         }
         return false;
     }
+
 
     public List<ComplaintDTO> getById(ServletContext servletContext, String id) {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
