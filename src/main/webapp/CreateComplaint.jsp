@@ -43,7 +43,7 @@
             <h2>Create Complaint</h2>
             <form class="row g-3" action="/create_complaint?id=<%= request.getParameter("id")%>" method="post">
                 <div class="col-md-12">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" class="form-label">Complaint Title</label>
                     <input type="text" class="form-control" id="description" name="description" required>
                 </div>
                 <div class="col-md-6">

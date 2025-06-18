@@ -53,7 +53,7 @@
     <h2>Confirm Delete Complaint</h2>
     <form class="row g-3" action="/delete-complaint?id=<%= complaintDTO.getId() %>&eid=<%= complaintDTO.getEmployee_id() %>" method="post">
         <div class="col-md-12">
-            <label for="description" class="form-label">Description</label>
+            <label for="description" class="form-label">Complaint Title</label>
             <input type="text" class="form-control" id="description" name="description" readonly value="<%= complaintDTO.getDescription() %>">
         </div>
         <div class="col-md-12">

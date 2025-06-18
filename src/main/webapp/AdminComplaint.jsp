@@ -17,7 +17,7 @@
 <% ComplaintDTO complaint = ComplaintModel.findById(request.getServletContext(), request.getParameter("id"));%>
 <form class="row g-3" action="/complaint-admin?id=<%= complaint.getId()%>&eid=<%= complaint.getEmployee_id()%>" method="post">
     <div class="col-md-6">
-        <label for="description" class="form-label">Description</label>
+        <label for="description" class="form-label">Complaint Title</label>
         <input type="text" class="form-control" id="description" name="description" required value="<%=complaint.getDescription()%>">
     </div>
     <div class="col-md-6">

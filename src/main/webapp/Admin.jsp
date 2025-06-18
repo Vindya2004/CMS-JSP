@@ -19,11 +19,11 @@
     <thead>
     <tr>
         <th scope="col">Complaint Id</th>
-        <th scope="col">employee_id</th>
-        <th scope="col">description</th>
-        <th scope="col">date_submitted</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Complaint Title</th>
+        <th scope="col">date</th>
         <th scope="col">status</th>
-        <th scope="col">comments</th>
+        <th scope="col">comment</th>
         <th scope="col">Action</th>
     </tr>
     </thead>

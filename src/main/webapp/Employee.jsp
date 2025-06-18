@@ -185,8 +185,8 @@
         <tr>
             <th>Complaint ID</th>
             <th>Employee ID</th>
-            <th>Description</th>
-            <th>Date Submitted</th>
+            <th>Complaint Title</th>
+            <th>Date</th>
             <th>Status</th>
             <th>Comment</th>
             <th>Action</th>
