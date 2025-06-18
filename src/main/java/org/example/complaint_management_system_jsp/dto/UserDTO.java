@@ -14,10 +14,10 @@ public class UserDTO {
     private String email;
     private String jobRole;
 
-    public UserDTO(String name, String password, String jobRole) {
+    public UserDTO(String name, String password) {
         this.username = name;
         this.password = password;
-        this.jobRole = jobRole;
+
     }
 
     public UserDTO(String name, String email, String password, String jobRole) {

@@ -19,93 +19,160 @@
 
     <style>
         body {
-            background-color: #f8f9fa;
+            background: #f1f5f9;
             font-family: 'Segoe UI', sans-serif;
         }
 
-        .nav {
-            background-color: #343a40;
-            padding: 10px;
+        .custom-navbar {
+            background: linear-gradient(to right, #7c3aed, #6d28d9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
         }
 
         .nav-link {
             color: #ffffff;
-            font-weight: 500;
-            margin-right: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #ffc107;
+            color: #fbbf24; /* amber hover */
+            text-decoration: none;
+        }
+
+        .logout-btn {
+            background-color: #ef4444;
+            color: white !important;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc2626;
         }
 
         .container {
             margin-top: 40px;
         }
 
-        .table thead {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        .table tbody tr:hover {
-            background-color: #e9ecef;
-        }
-
-        .btn-info, .btn-danger {
-            margin-right: 5px;
-        }
-
-        .title-bar {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .title-bar h2 {
-            font-weight: 600;
-            color: #0d6efd;
-        }
-        .para {
-            background-color: #fff3e0;
-            padding: 25px;
-            border-left: 8px solid #c97a40;
+        .styled-heading {
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
             border-radius: 12px;
+            padding: 25px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 35px;
-            transition: all 0.3s ease-in-out;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .styled-heading h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .styled-heading h4 {
+            font-weight: 400;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .para {
+            background-color: #fff;
+            padding: 15px;
+            border-left: 5px solid #3b82f6;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
 
         .para p {
-            font-size: 17px;
-            color: #4e342e;
+            font-size: 15px;
+            color: #334155;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
 
         .para p i {
-            font-size: 22px;
-            margin-right: 12px;
-            color: #ff6f00;
+            font-size: 18px;
+            margin-right: 10px;
+            color: #3b82f6;
+        }
+
+        .table {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .table thead th {
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table tbody td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .btn-info, .btn-danger {
+            margin: 2px;
+            padding: 5px 12px;
+            border-radius: 12px;
+        }
+
+        .btn-info {
+            background-color: #0ea5e9;
+            border: none;
+        }
+
+        .btn-danger {
+            background-color: #ef4444;
+            border: none;
+        }
+
+        .btn-info:hover {
+            background-color: #0284c7;
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
         }
     </style>
 </head>
 <body>
-<ul class="nav">
-    <li class="nav-item">
+<nav class="navbar custom-navbar d-flex justify-content-between align-items-center px-4 py-3">
+    <div class="nav-left d-flex align-items-center gap-4">
         <a class="nav-link active" aria-current="page" href="#">Home</a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="CreateComplaint.jsp?id=<%= request.getParameter("id")%>">Create Complaint</a>
-    </li>
-</ul>
+    </div>
+    <div class="nav-right">
+        <a href="index.jsp" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </div>
+</nav>
+
+
 
 <div class="container">
-    <div class="title-bar">
-        <h2>User DashBoard</h2>
-        <h4>View all Complaint</h4>
+    <div class="title-bar styled-heading">
+        <div class="heading-content">
+            <h2>User Dashboard</h2>
+            <h4>View All Complaints</h4>
+        </div>
     </div>
+
 
     <div class="para">
         <p>Welcome to your complaint dashboard</p>

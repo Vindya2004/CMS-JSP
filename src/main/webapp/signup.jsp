@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <style>
         body {
-            background: #f0f2f5;
+            background: linear-gradient(135deg, #d8b4f8, #fbc2eb, #a6c1ee);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -69,6 +69,19 @@
         .btn-info:hover {
             background-color: #084cdf;
         }
+        .form-select {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ced4da;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .form-select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
 
         @media (max-width: 768px) {
             .card-container {
@@ -103,8 +116,16 @@
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter Your Email" name="email" required>
             </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Job-Role</label>
+                <select id="inputState" class="form-select" name="user">
+                    <option selected>Choose...</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                </select>
+            </div>
 
-            <button type="submit" class="btn btn-submit">Sign Up</button>
+            <button type="submit" class="btn btn-submit mt-3">Sign Up</button>
 
         </form>
     </div>

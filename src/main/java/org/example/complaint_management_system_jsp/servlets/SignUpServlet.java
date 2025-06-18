@@ -17,12 +17,13 @@ public class SignUpServlet extends HttpServlet {
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String job = req.getParameter("user");
 
 
         ServletContext servletContext = req.getServletContext();
 
-        if (UserModel.saveUser(new UserDTO(name, email, password, "employee"), servletContext)){
-            resp.sendRedirect(req.getContextPath() + "/Employee.jsp");
+        if (UserModel.saveUser(new UserDTO(name, email, password,job), servletContext)){
+            resp.sendRedirect(req.getContextPath() + "/index.jsp");
         }
 
     }

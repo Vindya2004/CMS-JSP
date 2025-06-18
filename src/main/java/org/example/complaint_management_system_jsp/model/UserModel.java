@@ -14,10 +14,10 @@ public class UserModel {
         BasicDataSource ds = (BasicDataSource) servletContext.getAttribute("ds");
         try {
             Connection connection = ds.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ? and password = ? and job = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from users where username = ? and password = ?");
             preparedStatement.setString(1,userDTO.getUsername());
             preparedStatement.setString(2,userDTO.getPassword());
-            preparedStatement.setString(3,userDTO.getJobRole());
+//            preparedStatement.setString(3,userDTO.getJobRole());
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {

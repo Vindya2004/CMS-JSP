@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <style>
         body {
-            background: #f0f2f5;
+            background: linear-gradient(135deg, #d8b4f8, #fbc2eb, #a6c1ee);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -93,21 +93,21 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Enter Your Password" name="password" required>
             </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">Job-Role</label>
-                <select id="inputState" class="form-select" name="user">
-                    <option selected>Choose...</option>
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                </select>
-            </div>
+<%--            <div class="col-md-4">--%>
+<%--                <label for="inputState" class="form-label">Job-Role</label>--%>
+<%--                <select id="inputState" class="form-select" name="user">--%>
+<%--                    <option selected>Choose...</option>--%>
+<%--                    <option value="admin">Admin</option>--%>
+<%--                    <option value="employee">Employee</option>--%>
+<%--                </select>--%>
+<%--            </div>--%>
             <button type="submit" class="btn btn-submit mt-3">Sign In</button>
 
             <a href="signup.jsp" type="button" class="btn btn-info mt-3">Sign Up</a>
         </form>
     </div>
     <div class="image-section">
-        <img src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-5425.jpg" alt="Login Illustration">
+        <img src="https://img.freepik.com/free-vector/customer-feedback-concept-illustration_114360-7885.jpg" alt="Complaint Feedback Image" class="img-fluid" style="max-width: 250px; border-radius: 10px;">
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
