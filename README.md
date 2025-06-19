@@ -64,29 +64,17 @@ Complaint_Management_System_JSP/
 │   └── main/
 │       ├── java/
 │       │   └── org/
-│       │       └── example/
-│       │           └── complaint_management_system_jsp/
-│       │               ├── controller/         # Servlet Controllers
-│       │               │   ├── AdminComplaintServlet.java
-│       │               │   ├── AdminDeleteServlet.java
-│       │               │   ├── ComplaintServlet.java
-│       │               │   ├── DeleteComplaintServlet.java
-│       │               │   ├── LoginServlet.java
-│       │               │   ├── SignUpServlet.java
-│       │               │   └── UpdateComplaintServlet.java
-│       │               ├── db/                 # Database Connection
-│       │               │   └── DBCP.java
-│       │               ├── dto/                # Data Transfer Objects
-│       │               │   ├── ComplaintDTO.java
-│       │               │   └── UserDTO.java
-│       │               └── model/              # Business Logic Layer
-│       │                   ├── ComplaintModel.java
-│       │                   └── UserModel.java
-│       └── resources/      # (optional resources directory)
+│       │    └── example/
+│       │     └── complaint_management_system_jsp/
+│       │      ├── controller/        
+│       │      ├── db/                
+│       │      ├── dto/                
+│       │      └── model/             
+│       └── resources/     
 │
 ├── webapp/
 │   ├── WEB-INF/
-│   │   └── web.xml          # Deployment Descriptor
+│   │   └── web.xml         
 │   ├── Admin.jsp
 │   ├── AdminComplaint.jsp
 │   ├── AdminDeleteComplaint.jsp
@@ -97,7 +85,7 @@ Complaint_Management_System_JSP/
 │     └── signup.jsp
 │     └── UpdateComplaint.jsp
 │
-├── pom.xml                  # Maven Build Configuration
+├── pom.xml                  
 └── .gitignore
 
 ## 🚀 How to Run
