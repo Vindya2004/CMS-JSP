@@ -1,4 +1,4 @@
-package org.example.complaint_management_system_jsp.servlets;
+package org.example.complaint_management_system_jsp.controller;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
